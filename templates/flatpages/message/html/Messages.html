@@ -1,0 +1,20 @@
+{% extends 'flatpages\main\html\main.html' %}
+
+{% csrf_token %}
+
+{% block Message_content %}
+    {% block example_block %}
+    {{ my_date|date:"Y-m-d" }}
+        {%for Mes in messages%}
+            {{Mes.content}}
+            {{Mes.addressee}}
+            {{Mes.sender}}
+        {% endfor %}
+
+
+    {% endblock %}
+{% endblock %}
+
+
+
+

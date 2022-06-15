@@ -1,0 +1,111 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+{% load static %}
+
+    <link rel="stylesheet" href="{% static 'css\main.css' %}" >
+    <script src="{% static 'js\main.js' %}">
+    </script>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="Header">
+
+</div>
+    <div id="Audio" onclick="popup()" class="Audio-Player">
+        <div class="Audio-text">
+            <p>
+               <h2> М<br>у<br>з<br>ы<br>к<br>a</h2>
+            </p>
+        </div>
+        <audio controls src="{% static '/message/music/музон.mp3' %}"></audio>
+        {% block music_block %}
+        {%endblock%}
+    </div>
+
+<div class="content">
+    <div class="Messages1">
+        {% block Message_content %}
+        {%endblock Message_content%}
+    </div>
+    <div class=" Posts">
+        {% block Post_content%}
+        {%endblock Post_content%}
+    </div>
+    <div class="Post_create">
+        {% block Post_create_content %}
+        {% endblock Post_create_content %}
+    </div>
+        <!-- тут что то будет -->
+</div>
+
+
+<div class="container">
+    <div class="row">
+
+
+        <div class="col-lg-6">
+            <div class="comment-field" id="comment-field"></div
+
+        </div>
+
+        <div class="col-lg-6">
+
+            <form onsubmit="return false;">
+
+                <div class="form-group">
+                    <label for="comment-body">Сообщение:</label>
+                    <input type="name" class="form-control2" id="comment-body" placeholder="Ваш комментарий">
+                </div>
+                <div class="form-group text-right">
+                    <button type="submit" id="comment-add" class="btn-primary">Добавить комментарий</button>
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>
+
+<span class="mainMenu2">
+<div class="mainMenu">
+        <div class="auth">
+            <a href="/login/" class="enter">Вход</a>
+            <a href="/logout/" class="exit">Выход</a>
+            <a href="/registretion/" class="registretion">Регистрация</a>
+        </div>
+        <div class="homePage">
+                <a href="/post/1/"><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAHsAAAB7CAMAAABjGQ9NAAAA/1BMVEXL4v////++2Pv/3c5KgKo2Xn3/y75AcJMrTWb0+//igIbk9v/P5v/dY24sV3fR6P+atc18mbQfRV52j6fz3tvk+v/E3f241Pv/5dTa6v/q8//v9v/s3+ElU3X/0sPs1Njt///jvsTQsavg6e9kkrlMbYncWmY3daEtcaHieX/cycHEtbSmoaiIjJlwf5BkeIwAPV3i4OvW3vOux+Ps6emrvMlTd5fP3umXuNuCnK5ggJjjydDjoKYuZoziiY9Qe5a9dYLMe4WqdINKYH2LpsJAV21wcn25n5/mv7WFfocASXDNytTt0sfz0c/57ublr7V6ocZxZn6Pb4JdXXmwYXKFg0k4AAAINUlEQVRogbXbe0PaOhQA8PCyVmuLMEDAMh2gV52bDgFlonuwO8ded4/v/1lukrZpmpw8Cnr+8Vl+nJzTtE0LKuQPt9tpe6hZpNFsona703FXeB2UkyVqHM1mzMdvot3pPp3dJdmibPB8i/g5BsDaxrDoAjwOzzp7S7ujguPR5/FWs22XvI3ttnUwlHzLKnmz3bWQAR2ZdZPttq1gQC8adYOdQyaRxYuGumvtbj5ZTr3YWdW2LLROb3ma1NV2ZwU4X+pKe6WkoygKqee0Xc9MWKfeVIw7bOdvMi1ehPc20F6XRtLeBhYdsvW0pwgt3oJwwNY1uBegUVWOxaI6CgRdwNs2dkfd4AGqTkI/9KWo4disBjkzl+yuhq4Ofb8CxSaJWl5ctHW13g1BOLE3a+IGBhxZ094Mzpmzd4WSG3a1rO2q6UBDJ/ZEbHYRdzW2ejYLqsoBZ/bmMBA3E+ym2tYdrTVZMxt3WyDsagLuqWzN3uUtdGkn9mbt47A+yiav6Tfe1mSNJjqa2VivCR0nlhy2NSPujbRpczaOi0Umc/Wop7ZmUkFeVVvurL25mXklIXFu1FNbd8QOFnlsIXHljsZs7RlpsJvHrtV17ZaOemJrZpW1bdX0hmzS5m3SdKH4TvBR7NOnmsoWE0dZ23Cmktr+y2/fTs9eVeiRlPzs4+8q/35+2Hj4XFPZisSRTdqpvTzdK5VKe3ul07OX569eD1+/On95dlrqbeDovbhQ2IrEoy+u4YQ4sf1zQkexlwT+foNG70tNYYv7mcvZpsuuxA7PSmBE9sZnlQ23emSbrgNY3nr7hdIGE6e28fJnbVu6QmW28SJkfVu8VEls3UyetcNvWnvjwtZudWPbfIEf2yHX5pDd+3KhsqFuQzZDju1lGC79c1hO8974UrvAAdnA9SGyGXKEvp6dnZ0qBpy3Nx5ePDw8fAVeAbgsR3ZrKvvRHGK2aTyHXkLudGQz5NjWwJa23OnIcPR8MhsfUJDu7PRRbfmMFdktoT2+jQuOrMr9FDbCtg2NLh/Bls7UkVWrIS+XDQ+ldL6KLNd1vP1nlvb372/gl5BmF2S/fKjBeVq5/Tq2pubGWtMQGx3Zr1Lb2ZdPYr+xshXFBmyybmUbml439jhs51i0VTZbz6bV5KOJvawZdM7WlFtq9Dy2MvHU7uk2X8tWdbpd2uvZisR7VtVe14YrbrWDQXa+mxPQqPfsRhzoc/v9m4Z8IE9pzXRKQxrynHf+ZNyaXt8Wh912wGW7neM4lkSm4ZIR7+nb7LFsfk9j9DOL7QS7Y3veAtsx3CuVLGz53MHufA22eySib1ewXcvzVNjmYgXb9vz8MWxxF7O9LnkCu217PcaFF4C2eFvQZNPrsXzN5gWj+hVgX9Wlm5JCQNeheQqO5clyXJDxH4XxcqLXBbppve4Qyd5o5vvDvuv+EGnX7Q99fzaSbgcr7bb1eguTK3694Ir4M/ybQh3/TaMDi1x260x0tGd00TocE9vl+22P/KIwDumS9kwx8vA6k8WgkzrHC/bLqUuDW/qJfjFdRkuPIVx3Ycg9u3VFcr99wO5Rhf2IcgXa7af/MhghkVetK+oG3fOa14Ny2UnvTyR2gl8ldvovTrk8uC5mKq9aT1WuIwcUPi6Xy8fsdYcJ7RaSFo9jyP6HboH5kcfOyOQu162fe6gYwyQc2Xav4hYXbSfehvDxyah6/RzoNg9dDxKXBmDjPW3PBWx+s+PBNdGBTlPdL/GC67IQDmAf/HAB2xG2PL72xLm8y98nyp4pe01R5hLvp9rzo9sD9kPfB9KOYtDK2pn7RNn7Y94IoBM7TO3Do52ju9QOlfaxc52xs/fH+IqDWaf2NBnwn0c7OztHW4k9VduOMwHShu6HegOtPY6tW0Jj/GQ/eitjne0M5LSB+8De9bG8dVpu/4aW+GoroolO8YMbdpMUoJ15OupBQbTZOaOnyxrHrLHtdhv7jN456W933e0G9wyKTONgu7h8/zuZ1b0RlDY3pw63STSeH7G0G+QX/XRaE/ayiE4SB+/7x6Me/KdPu+JPI/xnXO9DSm9P+fvSQNpJxcHnHeJRDwYGOxxHWOOO2nfxT+MQth0WkV2AbXrG2gQ7jRtz3GyR9vZka2vr5G1kH9S5vB3IngsjDjzXA9t84lHBtxu3WyRuI3ubKzec9rzF97hkE1xhc4lX4oKfUPskLjf3dweiqa15nonMMAqbSzwqeOMyti8bYrlBmtq657jwvK6y08T9GSl44zC2aZ8fcHs3nDaxtc+vYbyosPnEuXInBTemjW3Dc3u42f9R2Cnu00HfSoIOOTSpOVm7L1Lyc5ojFc5G3a8fsHJHBef2MEdFjyUJeD4VnFRJzJPXXzZYuaOCN5bJn+b2NPhc7tRU8nB8wMpNCp4ePys5aPh55Kmp5LNG/47Zd/3GzEA7U4iBn8PuG0oeTlm5ScHZKYsDynNHajONXXAH2uktrB5y9mHyDKeCnuV6/hxHFW73GL9Py40Lfq+lb1SE+vMG07Lm3Ml/x9nv/EyLC+MNltpgF9wFmHqE/+LsX3yfCUnvrvQ5C2XqkfSe0e+VtC5pk11wq5BOB/03m1t++4wW9qzFGp+rwdFfKPCPLG+WtTjc8J5lb+OBH8hlJ9qHmP4Q08dZuW6S7T4/hnMXkycel7ZYZ3POtjau+1hMniVO0hYG+378eJ+bo9FflDPZJxX/mKHn88mNtrdXsnHy0+qA8+n8coLnldR17qvTp/icZBR94sdvoPIHXxr8qRAUhzO7+WpT5NXt+A1Mq4v6xJn/3fk7n9R3b8bjaU6Wxv/PSxeEcgbfNAAAAABJRU5ErkJggg==">
+                    <p>Posts</p>
+                </a>
+        </div>
+        <div class="Music">
+                <a href="/messages/"><img height="145px" src="https://icons.iconarchive.com/icons/johanchalibert/mac-osx-yosemite/1024/messages-icon.png">
+                    <p>Messages</p>
+                </a>
+        </div>
+        <div class="Groups">
+                <a>
+                    <img src="data:image/png;base64,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">
+                    <p>Groups</p>
+                </a>
+        </div>
+        <div class="friends">
+                <a><img src="data:image/jpeg;base64,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" >
+                    <p>Friends</p>
+                </a>
+        </div>
+
+</div>
+
+</span>
+<div class="nickname"><h2>{{request.user.username}}</h2></div>
+<div>
+
+</div>
+<div class="footer">
+    <p>qfqqf</p>
+</div>
+</body>
+</html>

@@ -1,0 +1,33 @@
+{% extends 'flatpages\main\html\main.html' %}
+<head>
+
+
+
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+{% block title %} Новости на сайте {% endblock %}
+
+
+{% block Post_content %}
+<div class="Add_Post">
+    <a href="/postCreate/" class="Add_Post">Add</a>
+
+</div>
+    {% block example_block %}
+        {%for p in posts%}
+                {{p.title}}
+                {{p.content}}
+                <img width="800px" height="500px" src="{{MEDIA_URL}}{{p.photo}}"/>
+                {{p.photo}}
+                {{p.time_create}}
+            {%endfor%}
+
+
+
+
+    {% endblock%}
+{% endblock Post_content %}
+
+</body>

@@ -1,0 +1,335 @@
+body{
+    margin:0;
+    padding:0;
+}
+li{
+    list-style-type:none;
+}
+
+.Audio-Player{
+    top:0px;
+    z-index:2;
+    margin-bottom:20000px;
+    border-radius:6%;
+    border:solid gold;
+    height:912px;
+    position:fixed;
+    background:linear-gradient(red,yellow);
+    width:3%;
+    display:inline-block;
+    transition:3s;
+}
+.Audio-Player audio{
+visibility:hidden;
+
+}
+.show{
+width:16%;
+
+}
+.show audio{
+visibility:visible;
+
+}
+.show .Audio-text{
+    display:none;
+    position:sticky;
+}
+
+.auth{
+    color:Black;
+    font-size:150%;
+    margin-left:16%;
+    border:solid gold;
+    background:linear-gradient(red,yellow);
+    margin-right:20%;
+    position:fixed;
+    top:0px;
+
+
+}
+.enter{
+    text-decoration:none;
+    background-color:gold;
+    color:black;
+
+}
+.enter:hover{
+    background-color:red;
+}
+.exit{
+    text-decoration:none;
+    background-color:gold;
+    color:black;
+
+}
+.exit:hover{
+    background-color:red;
+}
+.registretion{
+    text-decoration:none;
+    background-color:gold;
+    color:black;
+
+}
+.registretion:hover{
+    background-color:red;
+}
+
+.col-lg-12{
+
+}
+.Messages1{
+position:absolute;
+display:inline-block;
+margin-left:45%;
+}
+
+.Posts{
+position:absolute;
+align:center;
+}
+
+.container{
+top:920px;
+padding-top:40%;
+    z-index:2;
+    height:180px;
+    border:solid gold;
+    width:16%;
+    margin-left:83.7%;
+    margin-top:-48.3%;
+    position:fixed;
+}
+.comment-field{
+    position:sticky;
+    color:#fc0a0a;
+    background-color:;
+    border: 4px double black;
+    margin-right:26%;
+
+}
+
+.form-control1{
+    position:sticky;
+    padding:10px;
+    border-radius:10px;
+    margin-left:13%;
+}
+.form-control2{
+    position:sticky;
+    padding:10px;
+    border-radius:10px;
+
+}
+.mainMenu2{
+    position:fixed;
+
+    left:33%;
+    display:block;
+    z-index:2;
+    bottom:10px;
+    width:40%;
+    border:liner red;
+
+}
+
+.mainMenu p{
+    visibility:hidden;
+}
+.mainMenu .auth{
+    position:fixed;
+    right:50%;
+    margin-top:45%;
+    
+}
+.nickname{
+    margin-left:72%;
+    bottom:7%;
+    position:fixed;
+    border:solid gold;
+    background:linear-gradient(red,yellow); 
+
+}
+.mainMenu a{
+    text-decoration:none;
+}
+
+
+.mainMenu img{
+animation-name:boom;
+}
+
+
+
+@keyframes position{
+from{transform: translateY(-5%);
+}
+to{transform: translateY(-15%);
+
+}
+}
+@keyframes eye{
+    0%{
+    transform: scale(0.95);
+        border-radius:50%;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.7);
+
+
+    }
+    70%{
+
+    transform: scale(1) translateY(-10%);;
+		box-shadow: 0 0 0 10px rgba(0, 0, 0, 0);
+    }
+    100%{
+    transform: scale(0.95) translateY(-15%);;
+		box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+    }
+}
+
+.homePage{
+
+    margin:2%;
+    display:inline-block;
+    border-radius:40%;
+
+}
+
+.homePage a:hover > p{
+    visibility:visible;
+    position:center;
+    padding-left:30%;
+
+}
+
+.homePage:hover img{
+    animation: eye 3s ;
+
+}
+.homePage:hover{
+    animation-name:position;
+    transition:2s;
+    transform: translate(0,-20%);
+
+}
+
+.Music{
+    display:inline-block;
+    margin:2%;
+    border-radius:40%
+}
+.Music:hover img{
+    animation: eye 3s ;
+
+}
+.Music a:hover > p{
+    visibility:visible;
+     padding-left:30%;
+}
+.Music:hover{
+    animation-name:position;
+    transition:2s;
+    transform: translate(0,-20%);
+}
+
+
+
+.Groups{
+    display:inline-block;
+    margin:2%;
+    border-radius:40%
+}
+.Groups:hover img{
+    animation: eye 3s ;
+
+}
+.Groups a:hover > p{
+    visibility:visible;
+     padding-left:30%;
+}
+.Groups:hover{
+animation-name:position;
+    transition:2s;
+    transform: translate(0,-20%);
+}
+
+
+
+
+.friends{
+  margin:2%;
+  display:inline-block;
+  border-radius:40%
+}
+.friends:hover img{
+    animation: eye 3s ;
+
+}
+
+.friends a:hover > p{
+    visibility:visible;
+     padding-left:30%;
+}
+
+.friends:hover{
+    animation-name:position;
+    transition:2s;
+    transform: translate(0,-20%);
+}
+
+
+
+
+.footer{
+    margin-top:5000px;
+
+    bottom:0%;
+
+    width:100%;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+.Add_Post a{
+    margin:20px;
+
+    background:linear-gradient(red,yellow);
+}
+.Post_create{
+
+
+}
+
+.Messages1{
+border:solid gold;
+margin-top:15%;
+align-items: center;
+
+
+}
+
+.content{
+
+
+
+
+
+
+
+}
